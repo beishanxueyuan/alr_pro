@@ -347,9 +347,7 @@
         var a = n("2877")
             , r = Object(a.a)({}, (function (t, e) {
                 var n = e._c;
-                return n("div", {
-                    staticClass: "scroll-x"
-                }, [e.props.text ? n("pre", [e._v(e._s(e.props.text))]) : n("div", [e._v("-")])])
+                return null
             }
             ), [], !0, null, null, null);
         e.default = r.exports
@@ -734,22 +732,6 @@
                     width: 300,
                     title: "标题",
                     dataIndex: "title"
-                }, {
-                    width: 400,
-                    title: "headers",
-                    dataIndex: "headers",
-                    scopedSlots: {
-                        customRender: "headers",
-                        component: a.a.headers
-                    }
-                }, {
-                    width: 200,
-                    title: "finger",
-                    dataIndex: "finger",
-                    scopedSlots: {
-                        customRender: "finger",
-                        component: a.a.finger
-                    }
                 }, {
                     width: 300,
                     title: "截图",
@@ -3319,14 +3301,7 @@
                 var t = this
                     , e = t.$createElement
                     , n = t._self._c || e;
-                return n("div", [n("div", {
-                    directives: [{
-                        name: "show",
-                        rawName: "v-show",
-                        value: "https://s0.wp.com/mshots/v1/" + t.text.split("/")[3].replace("_", "://").replace(".jpg", ""),
-                        expression: "text"
-                    }]
-                }, [n("img", {
+                return n("div", [n("div",[n("img", {
                     staticClass: "sceen-shoot_img",
                     attrs: {
                         alt: t.text,
@@ -3337,17 +3312,18 @@
                             return t.showScreenShotDetail("https://s0.wp.com/mshots/v1/" + t.text.split("/")[3].replace("_", "://").replace(".jpg", ""))
                         }
                     }
-                }), n("img-dialog", {
+                }),n("img", {
+                    staticClass: "sceen-shoot_img",
                     attrs: {
-                        visible: t.imgVisible,
-                        imgSrc: t.imgSrc
+                        alt: t.text,
+                        src: "https://s0.wp.com/mshots/v1/https://web.archive.org/web/*/" + t.text.split("/")[3].replace("_", "://").replace(".jpg", "")+"*"
                     },
                     on: {
-                        closeImgDialog: function (e) {
-                            t.imgVisible = !1
+                        click: function (e) {
+                            open("https://web.archive.org/web/*/" + t.text.split("/")[3].replace("_", "://").replace(".jpg", "")+"*")
                         }
                     }
-                })], 1), n("img", {
+                })]),n("div",[n("img", {
                     staticClass: "sceen-shoot_img",
                     attrs: {
                         alt: t.text,
@@ -3358,7 +3334,19 @@
                             open("https://www.google.com//search?q=site:" + t.text.split("/")[3].replace("_", "://").replace(".jpg", ""))
                         }
                     }
+                }),n("img", {
+                    staticClass: "sceen-shoot_img",
+                    attrs: {
+                        alt: t.text,
+                        src: "https://s0.wp.com/mshots/v1/https://cn.bing.com/search%3fq%3dsite%3A" + t.text.split("/")[3].replace("_", "://").replace(".jpg", "")
+                    },
+                    on: {
+                        click: function (e) {
+                            open("https://cn.bing.com/search?q=site:" + t.text.split("/")[3].replace("_", "://").replace(".jpg", ""))
+                        }
+                    }
                 })])
+            ])
             }
             ), [], !1, null, "520c834b", null);
         e.default = o.exports
